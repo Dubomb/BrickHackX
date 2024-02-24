@@ -10,7 +10,6 @@ def goals(request):
             return JsonResponse({"message": data}, status=200)
         except json.JSONDecodeError:
             return JsonResponse({"message": "Response contains invalid JSON"}, status=400)
-        pass
     elif request.method == "POST":
         try:
             data = request.body
