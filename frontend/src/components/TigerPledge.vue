@@ -23,6 +23,11 @@
       <div v-else-if="selectedBox === 'recycle'">
         Recycling sustainability tracker
       </div>
+
+      <div v-for="goal in filteredGoals" :key="goal.id">
+        <GoalCard :goal="goal"></GoalCard>
+      </div>
+
     </div>
     </div>
 
@@ -30,26 +35,53 @@
 
   </template>
   
-  <script>
-  export default {
-    name: 'TigerPledge',
-    props: {
-      msg: String
-    },
-    data() {
+<script>
+import GoalCard from './GoalCard.vue';
+
+//import {uniqueId} from 'lodash';
+
+export default {
+  name: 'TigerPledge',
+
+  components: {
+    GoalCard,
+  },
+
+  props: {
+    msg: String,
+  },
+
+  data() {
     return {
       showBox: false,
-      selectedBox: ''
+      selectedBox: '',
+      goals: [],
+      filteredGoals: [],
     };
-    },
-    methods: {
-        displayBox(boxType) {
+  },
+
+  methods: {
+      displayBox(boxType) {
         this.selectedBox = boxType;
         this.showBox = true;
-        }
-    }
+
+        this.filteredGoals = this.goals.filter((g) => g.category === this.selectedBox)
+      },
+
+      async getGoals() {
+        const response = await fetch("http://localhost:8000/api/goals");
+        
+        const result = await response.json();
+
+        this.goals = result.message;
+      }
+  },
+
+  mounted() {
+    this.getGoals();
   }
-  </script>
+}
+</script>
 
   <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
