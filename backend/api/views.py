@@ -13,8 +13,9 @@ def goals(request):
         pass
     elif request.method == "POST":
         try:
-            json.loads(persistence.write_goal())
-            return JsonResponse({"message": "Wrote goal"}, status=200)
+            data = request.body
+            persistence.write_goal(data)
+            return JsonResponse({"message": "Successfully created goal"}, status=200)
         except json.JSONDecodeError:
             return JsonResponse({"message": "Response contains invalid JSON"}, status=400)
     elif request.method == "PUT":
