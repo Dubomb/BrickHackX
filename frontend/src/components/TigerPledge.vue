@@ -7,9 +7,9 @@
       </p>
 
       <div class="button-container">
-      <Cbutton class="water-button" @click="displayBox('water')">Water</Cbutton>
-      <Cbutton class="food-button" @click="displayBox('food')">Food</Cbutton>
-      <Cbutton class="recycling-button" @click="displayBox('recycle')">Recycling</Cbutton>
+        <Cbutton class="water-button" @click="displayBox('water')">Water</Cbutton>
+        <Cbutton class="food-button" @click="displayBox('food')">Food</Cbutton>
+        <Cbutton class="recycling-button" @click="displayBox('recycle')">Recycling</Cbutton>
       </div>
 
       <div class="box-container" v-if="showBox">
@@ -30,13 +30,13 @@
 
     </div>
     </div>
-
-    </div>
-
-  </template>
+    <GoalCreateMenu></GoalCreateMenu>
+  </div>
+</template>
   
 <script>
 import GoalCard from './GoalCard.vue';
+import GoalCreateMenu from './GoalCreateMenu.vue';
 
 //import {uniqueId} from 'lodash';
 
@@ -45,6 +45,7 @@ export default {
 
   components: {
     GoalCard,
+    GoalCreateMenu,
   },
 
   props: {
@@ -77,8 +78,10 @@ export default {
       }
   },
 
-  mounted() {
-    this.getGoals();
+  async mounted() {
+    this.selectedBox = 'water';
+    await this.getGoals();
+    this.displayBox(this.selectedBox);
   }
 }
 </script>
