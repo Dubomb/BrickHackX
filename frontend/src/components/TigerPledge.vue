@@ -7,10 +7,25 @@
       </p>
 
       <div class="button-container">
-      <Cbutton class="water-button">Water</Cbutton>
-      <Cbutton class="food-button">Food</Cbutton>
-      <Cbutton class="recycling-button">Recycling</Cbutton>
+      <Cbutton class="water-button" @click="displayBox('water')">Water</Cbutton>
+      <Cbutton class="food-button" @click="displayBox('food')">Food</Cbutton>
+      <Cbutton class="recycling-button" @click="displayBox('recycle')">Recycling</Cbutton>
       </div>
+
+      <div class="box-container" v-if="showBox">
+        <div class="box">
+      <div v-if="selectedBox === 'water'">
+        Water sustainability tracker
+      </div>
+      <div v-else-if="selectedBox === 'food'">
+        Food sustainability tracker
+      </div>
+      <div v-else-if="selectedBox === 'recycle'">
+        Recycling sustainability tracker
+      </div>
+    </div>
+    </div>
+
     </div>
 
   </template>
@@ -20,6 +35,18 @@
     name: 'TigerPledge',
     props: {
       msg: String
+    },
+    data() {
+    return {
+      showBox: false,
+      selectedBox: ''
+    };
+    },
+    methods: {
+        displayBox(boxType) {
+        this.selectedBox = boxType;
+        this.showBox = true;
+        }
     }
   }
   </script>
@@ -32,7 +59,10 @@
 
 .button-container {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 h3 {
   margin: 40px 0 0;
@@ -88,5 +118,19 @@ a {
 
 .recycling-button:hover {
   background-color: #3D5A80;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  background-color: #f0f0f0;
+  width: 1180px;
+  height: 350px;
+  padding: 30px;
+  margin-top: 48px;
+  border-radius: 10px;
 }
 </style>
