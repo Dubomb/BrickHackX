@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def index(request):
-    return HttpResponse("Hello world! Hi")
+def goals(request):
+    if request.method == "GET":
+        pass
+    elif request.method == "POST":
+        pass
+    elif request.method == "PUT":
+        pass
