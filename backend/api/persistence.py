@@ -1,3 +1,4 @@
+import json
 
 path = "data/goals.json"
 
@@ -7,8 +8,7 @@ def write_goal():
 def read_goals():
     print("Reading goal")
 
-    f = open(path, "r")
-    lines = f.readlines()
-    print(lines)
+    with open(path, "r") as f:
+        data = json.load(f)
 
-    return lines
+    return data
