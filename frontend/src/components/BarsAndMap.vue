@@ -3,6 +3,7 @@
       <div class="sidebar-left">
         <ul>
             <li v-for="(location, index) in locations" :key="index">{{ location.building }}</li>
+            
          </ul>
       </div>
       <div class="content">
