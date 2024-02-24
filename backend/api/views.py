@@ -20,12 +20,8 @@ def goals(request):
             return JsonResponse({"message": "Response contains invalid JSON"}, status=400)
     elif request.method == "PUT":
         try:
-            json.loads(persistence.update_goal())
-            return JsonResponse({"message": "Update goal"}, status=200)
-        except json.JSONDecodeError:
-            return JsonResponse({"message": "Response contains invalid JSON"}, status=400)
-        try:
-            json.loads(persistence.update_goal())
+            data = request.body
+            persistence.update_goal(data)
             return JsonResponse({"message": "Update goal"}, status=200)
         except json.JSONDecodeError:
             return JsonResponse({"message": "Response contains invalid JSON"}, status=400)
