@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       items: [
-        { text: 'Tiger Pledge', url: '/pledge' }
+        { text: 'Tiger Pledge 🐾', url: '/pledge' }
       ]
     };
   },
@@ -35,7 +35,8 @@ nav {
   align-items: center;
   background-color: #385A80;
   color: #fff;
-  padding: 10px;
+  padding: 8px;
+  font-size: 20px;
 }
 
 ul {
@@ -54,7 +55,7 @@ a {
 }
 
 .tiger-pledge {
-  padding: 5px 30px; /* Adjust padding as needed */
+  padding: 15px 30px; /* Adjust padding as needed */
   margin-right: auto; /* Pushes the Tiger Pledge link to the right */
 }
 </style>

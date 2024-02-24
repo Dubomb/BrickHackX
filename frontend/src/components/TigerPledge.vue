@@ -2,32 +2,17 @@
     <div class="TigerPledge">
       <h1>{{ msg }}</h1>
       <p>
-        For a guide and recipes on how to configure / customize this project,<br>
-        check out the
-        <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+        Welcome to your very own sustainability journal! Start your EcoRIT pledge today by setting 
+        your own personal goals. Let's make our pledge to the planet a reality 🌎
       </p>
-      <h3>Installed CLI Plugins</h3>
-      <ul>
-        <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-        <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-      </ul>
-      <h3>Essential Links</h3>
-      <ul>
-        <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-        <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-        <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-        <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-        <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-      </ul>
-      <h3>Ecosystem</h3>
-      <ul>
-        <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-        <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-        <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-        <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-        <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-      </ul>
+
+      <div class="button-container">
+      <Cbutton class="water-button">Water</Cbutton>
+      <Cbutton class="food-button">Food</Cbutton>
+      <Cbutton class="recycling-button">Recycling</Cbutton>
+      </div>
     </div>
+
   </template>
   
   <script>
@@ -41,6 +26,14 @@
 
   <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.TigerPledge {
+    text-align: center;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 30px;
+}
 h3 {
   margin: 40px 0 0;
 }
@@ -54,5 +47,46 @@ li {
 }
 a {
   color: #42b983;
+}
+.water-button {
+  background-color: #98C1D9;
+  color: #fff;
+  border: none;
+  padding: 15px 150px;
+  margin-right: 30px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.food-button {
+  background-color: #ED874C;
+  color: #fff;
+  border: none;
+  padding: 15px 150px;
+  margin-right: 30px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.recycling-button {
+  background-color: #279D41;
+  color: #fff;
+  border: none;
+  padding: 15px 150px;
+  margin-right: 30px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.water-button:hover {
+  background-color: #3D5A80;
+}
+
+.food-button:hover {
+  background-color: #3D5A80;
+}
+
+.recycling-button:hover {
+  background-color: #3D5A80;
 }
 </style>
