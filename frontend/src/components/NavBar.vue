@@ -72,6 +72,7 @@ a:hover {
   cursor: pointer;
   border: none;
   padding: 30px;
+  font-family: "Mukta";
 
 }
 
