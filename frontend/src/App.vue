@@ -15,6 +15,7 @@
 
 <script>
 // Import the navigation bar component
+import BarsAndMap from './components/BarsAndMap.vue';
 import NavBar from './components/NavBar.vue';
 // Import the component you want to display for the Tiger Pledge
 import TigerPledge from './components/TigerPledge.vue';
@@ -45,7 +46,7 @@ export default {
 
 <style>
 #app {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
   margin-top: 20px;
 }
 </style>
