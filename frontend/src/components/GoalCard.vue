@@ -3,7 +3,11 @@
     <p>{{ goal.description }}</p>
     <p>{{ goal.current_amount }} out of {{ goal.goal_amount }}</p>
     <p>{{ goal.category }}</p>
-    <ProgressBar :progress="goal.progress"></ProgressBar>
+    <ProgressBar 
+      :start="goal.start_amount" 
+      :current="goal.current_amount" 
+      :end-goal="goal.goal_amount"
+    ></ProgressBar>
 </template>
 
 

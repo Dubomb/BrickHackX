@@ -1,35 +1,38 @@
 <template>
-    <div class="progress-container">
-        <h2>Progress</h2>
-        <div class="progress-bar" :style="{ width: progress + '%' }"></div>
+  <div class="progress-container">
+    <h2>Progress</h2>
+    <div class="progress-bar" :style="{ width: progress + '%' }"></div>
     <div class="controls">
       <button @click="decrement">-</button>
       <button @click="increment">+</button>
+      <p>{{ progress }}%</p>
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            progress: 0 // all goal progress starts at 0
-        };
+  props: ['start', 'current', 'endGoal'],
+  data() {
+    return {
+      progress: 0 // Local data property for progress
+    };
+  },
+  mounted() {
+    this.progress = this.start;
+  },
+  methods: {
+    increment() {
+      if (this.progress < 100) {
+        this.progress += 10;
+      }
     },
-
-    methods: {
-        increment() {
-            if (this.progress < 100) {  // need to replace with actual goal instead of 100
-                this.progress += 1; 
-            }
-        },
-
-        decrement() {
-            if (this.progress > 0) {
-                this.progress -= 1;
-            }
-        }
-    }
+    decrement() {
+      if (this.progress > 0) {
+        this.progress -= 10;
+      }
+    },
+  }
 };
 </script>
 
