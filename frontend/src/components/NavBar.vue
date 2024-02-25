@@ -59,6 +59,10 @@ a {
   color: #385A80;
   text-decoration: none;
 }
+a:hover {
+  color: #98C1D9;
+  transition: color .5s;
+}
 
 .login-button {
   color: #385A80;
