@@ -5,6 +5,7 @@
     <ul>
       <!-- You can add more navigation items here if needed -->
     </ul>
+    <button class="login-button">Login</button>
   </nav>
 </template>
 
@@ -28,15 +29,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #385A80;
-  color: #fff;
-  padding: 8px;
+  background-color: white;
+  color: #385A80;
   font-size: 20px;
+  border-bottom: #385A80 solid 2px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%; 
+  padding-left: 20px;
+  padding-right: 20px;
+
 }
 
 ul {
@@ -50,13 +56,24 @@ li {
 }
 
 a {
-  color: #fff;
+  color: #385A80;
   text-decoration: none;
+}
+
+.login-button {
+  color: #385A80;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 30px;
+
 }
 
 .tiger-pledge {
   padding: 15px 30px; /* Adjust padding as needed */
   margin-right: auto; /* Pushes the Tiger Pledge link to the right */
+  cursor: pointer;
 }
 </style>
 

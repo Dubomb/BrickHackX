@@ -1,6 +1,6 @@
 <template>
     <div class="card" @click="handleCardClick">
-      <h2>{{ location.building }}</h2>
+      <h2>{{ location.buildingEmoji }} {{ location.building }}</h2>
       <span>&rarr;</span>
     </div>
   </template>

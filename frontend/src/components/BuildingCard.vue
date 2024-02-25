@@ -1,6 +1,7 @@
 <template>
     <div class="card">
-      <h2>{{ location.building }}</h2>
+      <h2> {{ location.buildingEmoji }} {{ location.building }} </h2>
+      <h3>★ {{ location.starRating }} - "{{ location.review }}"</h3>
       <p><strong>Code:</strong> {{ location.abbreviation }}</p>
       <p><strong></strong> {{ location.descShort }}</p>
     </div>
