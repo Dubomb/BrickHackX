@@ -1,6 +1,6 @@
 <template>
     <div class="form-container">
-        <h2>Create a goal!</h2>
+        <h3>Create a goal!</h3>
         <form @submit.prevent="onSubmit" @submit="$emit('onCreateGoal', {'title': this.title, 'description': this.description, 'start_amount': 0, 'current_amount': 0, 'goal_amount': this.goal_amount})">
             <label>Title:</label>
             <input type="text" required="true" v-model="title"/>
@@ -39,7 +39,7 @@ export default {
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 20px;
+    height: 120px;
     z-index: 999;
 }
 
@@ -50,6 +50,11 @@ label {
 
 button {
     margin-left: 20px;
+}
+
+form {
+    margin-top: -10px;
+    margin-bottom: -10px;
 }
 
 input {

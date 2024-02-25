@@ -59,7 +59,7 @@ export default {
 <style>
 #app {
   font-family: Mukta;
-  margin-top: 20px;
+  margin-top: -10px;
 }
 /* cute google font */
 .mukta-extralight {

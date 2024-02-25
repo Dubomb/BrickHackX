@@ -24,8 +24,10 @@
         Recycling sustainability tracker
       </div>
 
-      <div v-for="goal in filteredGoals" :key="goal.id">
-        <GoalCard :goal="goal" :progress="goal.progress"></GoalCard>
+      <div class="goal-display-container">
+        <div v-for="goal in filteredGoals" :key="goal.id">
+          <GoalCard :goal="goal" :progress="goal.progress"></GoalCard>
+        </div>
       </div>
 
     </div>
@@ -113,6 +115,14 @@ export default {
     text-align: center;
 }
 
+.goal-display-container {
+  background-color: gainsboro;
+  overflow: auto;
+  padding: 50px;
+  height: 600px;
+  margin-bottom: 120px;
+}
+
 .button-container {
   text-align: center;
   margin-top: 48px;
@@ -182,7 +192,6 @@ a {
 }
 
 .box {
-  background-color: #f0f0f0;
   width: 1180px;
   height: 350px;
   padding: 30px;
