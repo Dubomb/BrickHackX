@@ -111,9 +111,14 @@ export default {
 <style scoped>
 .TigerPledge {
     text-align: center;
+    padding: 20px;
+}
+.TigerPledge p {
+  font-size: 20px;
 }
 
 .button-container {
+  font-size: 25px;
   text-align: center;
   margin-top: 48px;
   display: flex;
@@ -136,44 +141,34 @@ a {
 }
 .water-button {
   background-color: #98C1D9;
-  color: #fff;
-  border: none;
-  padding: 15px 150px;
-  margin-right: 30px;
-  cursor: pointer;
-  border-radius: 12px;
 }
-
 .food-button {
-  background-color: #ED874C;
-  color: #fff;
-  border: none;
-  padding: 15px 150px;
-  margin-right: 30px;
-  cursor: pointer;
-  border-radius: 12px;
+    background-color: #ED874C;
 }
-
 .recycling-button {
   background-color: #279D41;
+}
+
+.food-button,
+.water-button,
+.recycling-button {
   color: #fff;
   border: none;
-  padding: 15px 150px;
+  padding: 15px;
   margin-right: 30px;
   cursor: pointer;
   border-radius: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  width: 300px;
 }
 
-.water-button:hover {
-  background-color: #3D5A80;
-}
-
-.food-button:hover {
-  background-color: #3D5A80;
-}
-
+.water-button:hover,
+.food-button:hover,
 .recycling-button:hover {
   background-color: #3D5A80;
+  transition: background-color 1s;
 }
 
 .box-container {
@@ -183,10 +178,21 @@ a {
 
 .box {
   background-color: #f0f0f0;
-  width: 1180px;
-  height: 350px;
+  width: 80%;
   padding: 30px;
   margin-top: 48px;
   border-radius: 10px;
+}
+@media screen and (max-width: 900px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .water-button,
+  .food-button,
+  .recycling-button {
+    margin: 5px 0;
+  }
 }
 </style>
