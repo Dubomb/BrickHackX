@@ -1,6 +1,6 @@
 <template>
     <h2>Create a goal!</h2>
-    <form @submit.prevent="onSubmit" @submit="$emit('createGoal', buildGoal())">
+    <form @submit.prevent="onSubmit" @submit="$emit('onCreateGoal', {'title': this.title, 'description': this.description, 'current_amount': 0, 'goal_amount': this.goal_amount})">
         <label>Title:</label>
         <input type="text" required="true" v-model="title"/>
         <label>Description:</label>
@@ -25,13 +25,6 @@ export default {
 
     methods: {
         onSubmit() {
-            this.title = "";
-            this.description = "";
-            this.goal_amount = "";
-        },
-
-        buildGoal() {
-            return {"title": this.title, "description": this.description, "current_amount": 0, "goal_amount": this.goal_amount};
         },
     }
 }
