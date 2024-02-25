@@ -27,7 +27,8 @@ export default {
     // Register the navigation bar component
     NavBar,
     // Register the Tiger Pledge component
-    TigerPledge
+    TigerPledge,
+    BarsAndMap
   },
   data() {
     return {

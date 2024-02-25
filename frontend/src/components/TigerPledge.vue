@@ -25,7 +25,7 @@
       </div>
 
       <div v-for="goal in filteredGoals" :key="goal.id">
-        <GoalCard :goal="goal"></GoalCard>
+        <GoalCard :goal="goal" :progress="goal.progress"></GoalCard>
       </div>
 
     </div>
@@ -45,7 +45,7 @@ export default {
 
   components: {
     GoalCard,
-    GoalCreateMenu,
+    GoalCreateMenu
   },
 
   props: {

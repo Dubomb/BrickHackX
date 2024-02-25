@@ -8,7 +8,7 @@
       <div class="content">
         <p1>Map View</p1>
         <div class="content-inner">
-          <p1>Map goes here</p1>
+          <div id="map" class="map"></div>
         </div>
       </div>
       <div class="sidebar-right">
@@ -20,6 +20,7 @@
   </template>
   
   <script>
+  import mapboxgl from 'mapbox-gl';
   import BuildingCard from './BuildingCard.vue';
   import BuildingNameCard from './BuildingNameCard.vue';
 
@@ -103,6 +104,14 @@
 
     };
 
+    },
+    mounted() {
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZWp0NzUwOCIsImEiOiJjbHQwcHoyOWoxM2RuMmlvNnZvanhnbXF5In0.F4jjYcRbTHTNPerkaPnNhQ';
+      new mapboxgl.Map({
+        container: 'map',
+        center: [-74.5, 40],
+        zoom: 9
+      });
     }
 }
   </script>
@@ -132,5 +141,11 @@
     background-color: #fff;
     padding: 20px;
   }
+  #map {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  height: 60vh;
+}
   </style>
   
