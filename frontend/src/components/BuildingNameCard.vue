@@ -15,7 +15,7 @@
     },
     methods: {
         handleCardClick() {
-            this.$emit('building-clicked', this.location.building);
+            this.$emit('building-clicked', this.location);
         }
     }, 
   };

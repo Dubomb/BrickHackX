@@ -9,9 +9,9 @@
       <TigerPledge/>
     </div>
     <div v-else>
+      <BarsAndMap/>
       <router-view/>
     </div>
-    <BarsAndMap/>
   </div>
 </template>
 

@@ -3,8 +3,8 @@
         <h2>Progress</h2>
         <div class="progress-bar" :style="{ width: progress + '%' }"></div>
     <div class="controls">
-      <button @click="increment">+</button>
       <button @click="decrement">-</button>
+      <button @click="increment">+</button>
     </div>
     </div>
 </template>
