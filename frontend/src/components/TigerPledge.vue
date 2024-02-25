@@ -201,14 +201,21 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: 300px;
 }
 
-.water-button:hover,
-.food-button:hover,
+.water-button:hover {
+  background-color: #3d6d88;
+  transition: background-color 0.6s;
+}
+.food-button:hover {
+  background-color: #bf5416;
+  transition: background-color 0.6s;
+}
 .recycling-button:hover {
-  background-color: #3D5A80;
-  transition: background-color 1s;
+  background-color: #0c541c;
+  transition: background-color 0.6s;
 }
 
 .box-container {

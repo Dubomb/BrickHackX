@@ -1,6 +1,7 @@
 <template>
     <div class="card">
         <h2>{{ goal.title }}</h2>
+        <hr>
         <p>{{ goal.description }}</p>
         <p>{{ goal.current_amount }} out of {{ goal.goal_amount }}</p>
         <ProgressBar @onGoalChange="changeGoal"
@@ -36,10 +37,17 @@ export default {
 .card {
     background-color: #ffffff;
     border-radius: 8px;
+    border-left: solid lightblue 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
     margin-bottom: 20px;
     color: #3D5A80;
+}
+
+hr {
+    margin-top: -15px;
+    width: 30%;
+    color: whitesmoke;
 }
 
 h2 {
