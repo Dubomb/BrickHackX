@@ -1,7 +1,7 @@
 <template>
     <div class="form-container">
         <h2>Create a goal!</h2>
-        <form @submit.prevent="onSubmit" @submit="$emit('onCreateGoal', {'title': this.title, 'description': this.description, 'current_amount': 0, 'goal_amount': this.goal_amount})">
+        <form @submit.prevent="onSubmit" @submit="$emit('onCreateGoal', {'title': this.title, 'description': this.description, 'start_amount': 0, 'current_amount': 0, 'goal_amount': this.goal_amount})">
             <label>Title:</label>
             <input type="text" required="true" v-model="title"/>
             <label>Description:</label>
