@@ -1,6 +1,7 @@
 <template>
     <div class="card" @click="handleCardClick">
       <h2>{{ location.building }}</h2>
+      <span>&rarr;</span>
     </div>
   </template>
   
@@ -27,6 +28,9 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   h2 {

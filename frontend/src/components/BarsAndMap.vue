@@ -2,7 +2,7 @@
     <div class="container">
       <div class="sidebar-left">
         <div class="location-cards">
-            <BuildingNameCard v-for="(location, index) in locations" :key="index" :location="location" @building-clicked="handleBuildingClicked"/>
+            <BuildingNameCard v-for="(location, index) in locationSet" :key="index" :location="location" @building-clicked="handleBuildingClicked"/>
         </div>
       </div>
       <div class="content">
@@ -77,6 +77,30 @@
   {id: "30", descShort: "2nd floor near elevator", building: "Building 9", abbreviation: "BLC"},
   {id: "31", descShort: "Near restrooms on first floor", building: "University Services Center", abbreviation: "USC"}
 ],
+        locationSet: [
+    {"id": 1, "building": "Clark Gymnasium"},
+    {"id": 2, "building": "Wallace Library"},
+    {"id": 3, "building": "James E. Booth Hall"},
+    {"id": 4, "building": "Susanne G. Whittaker Library"},
+    {"id": 5, "building": "Ornamental Horticulture Building"},
+    {"id": 6, "building": "Building 9"},
+    {"id": 7, "building": "Campus Center"},
+    {"id": 8, "building": "Hale-Andrews Student Life Center"},
+    {"id": 9, "building": "Golisano Hall"},
+    {"id": 10, "building": "College of Business"},
+    {"id": 11, "building": "Gordon Field House"},
+    {"id": 12, "building": "Building 6"},
+    {"id": 13, "building": "August Center"},
+    {"id": 14, "building": "Eastman Hall"},
+    {"id": 15, "building": "University Services Center"},
+    {"id": 16, "building": "Frank Ritter Ice Arena"},
+    {"id": 17, "building": "Institute Hall"},
+    {"id": 18, "building": "Grace Watson Hall"},
+    {"id": 19, "building": "Engineering Technology Services"},
+    {"id": 20, "building": "Student Life Center"}
+]
+
+
     };
 
     }
@@ -92,7 +116,7 @@
   
   .sidebar-left,
   .sidebar-right {
-    width: 275px;
+    width: 300px;
     background-color: #98C1D9;
     padding: 30px;
     border-radius: 20px;

@@ -25,7 +25,7 @@ export default {
 
 <style>
 #app {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
   margin-top: 20px;
 }
 </style>
