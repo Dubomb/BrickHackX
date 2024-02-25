@@ -3,7 +3,7 @@
     <p>{{ goal.description }}</p>
     <p>{{ goal.current_amount }} out of {{ goal.goal_amount }}</p>
     <p>{{ goal.category }}</p>
-    <ProgressBar 
+    <ProgressBar @onGoalChange="changeGoal"
       :start="goal.start_amount" 
       :current="goal.current_amount" 
       :end-goal="goal.goal_amount"
@@ -19,7 +19,15 @@ export default {
     components: {
         ProgressBar
     },
-    props: ['goal']
+
+    methods: {
+        changeGoal(start, current, goal) {
+            console.log(this.goal.id);
+            this.$emit('onChangeGoal', this.goal.id, start, current, goal);
+        }
+    },
+
+    props: ['goal'],
 }
 </script>
 

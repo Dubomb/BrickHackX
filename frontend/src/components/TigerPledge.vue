@@ -26,7 +26,7 @@
 
       <div class="goal-display-container">
         <div v-for="goal in filteredGoals" :key="goal.id">
-          <GoalCard :goal="goal" :progress="goal.progress"></GoalCard>
+          <GoalCard @onChangeGoal="updateGoal" :goal="goal" :progress="goal.progress"></GoalCard>
         </div>
       </div>
 
@@ -99,6 +99,33 @@ export default {
         this.goals.push(goal);
         this.displayBox(this.selectedBox);
       },
+
+      async updateGoal(id, start, current, goal) {
+        let i;
+        for (i = 0; i < this.goals.length; i++) {
+          if (this.goals[i].id == id) {
+            this.goals[i].start_amount = start;
+            this.goals[i].current_amount = current;
+            this.goals[i].goal_amount = goal;
+            break;
+          }
+        }
+
+        console.log(this.goals[i]);
+
+        const response = await fetch("http://localhost:8000/api/goals/", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.goals[i]),
+        });
+
+        if (!response.ok) {
+          console.log("Goal update failed");
+        }
+
+      }
   },
 
   async mounted() {

@@ -1,11 +1,11 @@
 <template>
   <div class="progress-container">
     <h2>Progress</h2>
-    <div class="progress-bar" :style="{ width: progress + '%' }"></div>
+    <div class="progress-bar" :style="{ width: percent + '%' }"></div>
     <div class="controls">
       <button @click="decrement">-</button>
       <button @click="increment">+</button>
-      <p>{{ progress }}%</p>
+      <p>{{ percent }}%</p>
     </div>
   </div>
 </template>
@@ -15,23 +15,46 @@ export default {
   props: ['start', 'current', 'endGoal'],
   data() {
     return {
-      progress: 0 // Local data property for progress
+      start_amount: 0,
+      current_amount: 0,
+      goal_amount: 0,
+      percent: 0,
     };
   },
   mounted() {
-    this.progress = this.start;
+    this.start_amount = this.start;
+    this.current_amount = this.current;
+    this.goal_amount = this.endGoal;
+    this.percent = this.calcPercent();
   },
   methods: {
     increment() {
-      if (this.progress < 100) {
-        this.progress += 10;
+      this.current_amount += 1;
+      if (this.current_amount === this.goal_amount) {
+        this.goal_amount *= 2;
+        this.start_amount = this.current_amount;
       }
+
+      this.percent = this.calcPercent();
+
+      this.changeGoal();
     },
     decrement() {
-      if (this.progress > 0) {
-        this.progress -= 10;
+      if (this.current_amount === this.start_amount) {
+        return;
       }
+
+      this.current_amount -= 1;
+      this.percent = this.calcPercent();
+
+      this.changeGoal();
     },
+    calcPercent() {
+      return (this.current_amount - this.start) / (this.endGoal - this.start) * 100;
+    },
+    changeGoal() {
+      this.$emit('onGoalChange', this.start_amount, this.current_amount, this.goal_amount);
+    }
   }
 };
 </script>
