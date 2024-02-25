@@ -30,7 +30,7 @@
 
     </div>
     </div>
-    <GoalCreateMenu></GoalCreateMenu>
+    <GoalCreateMenu @onCreateGoal="createGoal"></GoalCreateMenu>
   </div>
 </template>
   
@@ -75,7 +75,28 @@ export default {
         const result = await response.json();
 
         this.goals = result.message;
-      }
+      },
+
+      async createGoal(goal) {
+        goal.id = this.goals.length + 1;
+        goal.category = this.selectedBox;
+
+        const response = await fetch("http://localhost:8000/api/goals/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(goal),
+        });
+
+        if (!response.ok) {
+          console.log("Goal creation failed.");
+          return;
+        }
+
+        this.goals.push(goal);
+        this.displayBox(this.selectedBox);
+      },
   },
 
   async mounted() {
@@ -86,7 +107,7 @@ export default {
 }
 </script>
 
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .TigerPledge {
     text-align: center;
