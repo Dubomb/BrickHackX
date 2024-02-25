@@ -40,9 +40,6 @@
                     this.matchLocations.push(loc);
                     this.map.setCenter([location.longitude, location.latitude]);
                     this.map.setZoom(18);
-                    new mapboxgl.Marker()
-                      .setLngLat([location.longitude, location.latitude])
-                      .addTo(this.map);
                 }
             });
         }
@@ -90,11 +87,11 @@
     {"id": 4, "building": "Sustainability Institute Hall", "latitude": "43.08524", "longitude": "-77.68129"},
     {"id": 5, "building": "Orange Hall", "latitude": "43.08358", "longitude": "-77.67875"},
     {"id": 6, "building": "Bausch and Lomb Center", "latitude": "43.08600", "longitude": "-77.67537"},
-    {"id": 7, "building": "Campus Center", "latitude": "43.08400", "longitude": "-77.67431"},
+    {"id": 7, "building": "Campus Center", "latitude": "43.08400", "longitude": "-77.67388"},
     {"id": 8, "building": "Hale-Andrews Student Life Center", "latitude": "43.08450", "longitude": "-77.67192"},
     {"id": 9, "building": "James E. Gleason Hall", "latitude": "43.08432", "longitude": "-77.67811"},
     {"id": 10, "building": "Center for Bioscience Education and Technology", "latitude": "43.08554", "longitude": "-77.67857"},
-    {"id": 11, "building": "Gordon Field House", "latitude": "43.08500", "longitude": "-77.67202"},
+    {"id": 11, "building": "Gordon Field House", "latitude": "43.08506", "longitude": "-77.67175"},
     {"id": 12, "building": "Max Lowenthal Hall", "latitude": "43.08289", "longitude": "-77.67714"},
     {"id": 13, "building": "August Center", "latitude": "43.08411", "longitude": "-77.67212"},
     {"id": 14, "building": "Eastman Hall", "latitude": "43.08468", "longitude": "-77.67546"},
