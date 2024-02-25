@@ -1,8 +1,6 @@
 <template>
-    <div class="card">
+    <div class="card" @click="handleCardClick">
       <h2>{{ location.building }}</h2>
-      <p><strong>Code:</strong> {{ location.abbreviation }}</p>
-      <p><strong></strong> {{ location.descShort }}</p>
     </div>
   </template>
   
@@ -14,6 +12,11 @@
         required: true
       }
     },
+    methods: {
+        handleCardClick() {
+            this.$emit('building-clicked', this.location.building);
+        }
+    }, 
   };
   </script>
   
