@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from . import persistence
 import json
 
+@csrf_exempt
 def goals(request):
     if request.method == "GET":
         try:

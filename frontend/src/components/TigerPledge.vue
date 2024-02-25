@@ -7,9 +7,9 @@
       </p>
 
       <div class="button-container">
-      <Cbutton class="water-button" @click="displayBox('water')">Water</Cbutton>
-      <Cbutton class="food-button" @click="displayBox('food')">Food</Cbutton>
-      <Cbutton class="recycling-button" @click="displayBox('recycle')">Recycling</Cbutton>
+        <Cbutton class="water-button" @click="displayBox('water')">Water</Cbutton>
+        <Cbutton class="food-button" @click="displayBox('food')">Food</Cbutton>
+        <Cbutton class="recycling-button" @click="displayBox('recycle')">Recycling</Cbutton>
       </div>
 
       <div class="box-container" v-if="showBox">
@@ -23,33 +23,68 @@
       <div v-else-if="selectedBox === 'recycle'">
         Recycling sustainability tracker
       </div>
-    </div>
-    </div>
+
+      <div v-for="goal in filteredGoals" :key="goal.id">
+        <GoalCard :goal="goal"></GoalCard>
+      </div>
 
     </div>
-
-  </template>
+    </div>
+    <GoalCreateMenu></GoalCreateMenu>
+  </div>
+</template>
   
-  <script>
-  export default {
-    name: 'TigerPledge',
-    props: {
-      msg: String
-    },
-    data() {
+<script>
+import GoalCard from './GoalCard.vue';
+import GoalCreateMenu from './GoalCreateMenu.vue';
+
+//import {uniqueId} from 'lodash';
+
+export default {
+  name: 'TigerPledge',
+
+  components: {
+    GoalCard,
+    GoalCreateMenu,
+  },
+
+  props: {
+    msg: String,
+  },
+
+  data() {
     return {
       showBox: false,
-      selectedBox: ''
+      selectedBox: '',
+      goals: [],
+      filteredGoals: [],
     };
-    },
-    methods: {
-        displayBox(boxType) {
+  },
+
+  methods: {
+      displayBox(boxType) {
         this.selectedBox = boxType;
         this.showBox = true;
-        }
-    }
+
+        this.filteredGoals = this.goals.filter((g) => g.category === this.selectedBox)
+      },
+
+      async getGoals() {
+        const response = await fetch("http://localhost:8000/api/goals");
+        
+        const result = await response.json();
+
+        this.goals = result.message;
+      }
+  },
+
+  async mounted() {
+    this.selectedBox = 'water';
+    await this.getGoals();
+    this.displayBox(this.selectedBox);
   }
-  </script>
+}
+</script>
 
   <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
