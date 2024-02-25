@@ -148,6 +148,8 @@ export default {
 }
 .TigerPledge p {
   font-size: 20px;
+  width: 50%;
+  margin: auto;
 }
 
 .goal-display-container {

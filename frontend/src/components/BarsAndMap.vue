@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="content">
-        <h2 class="sidebarTitle">🗺️ Map View</h2> 
+        <h2 class="sidebarTitle">🗺️ Find a Water Fountain </h2> 
         <div class="content-inner">
           <div id="map" class="map"></div>
         </div>
