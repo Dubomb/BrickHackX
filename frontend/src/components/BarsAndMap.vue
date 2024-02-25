@@ -7,9 +7,13 @@
         </div>
       </div>
       <div class="content">
-        <h2>Map View</h2> 
+        <h2>Find a Water Fountain!</h2> 
         <div class="content-inner">
           <div id="map" class="map"></div>
+        </div>
+        <div class="fun-fact">
+          <h2>Did you know?</h2>
+          <h3>Reusable water bottles can save hundreds of plastic water bottles every year!</h3>
         </div>
       </div>
       <div class="sidebar-right">
@@ -86,11 +90,11 @@
     {"id": 1, "building": "Clark Gymnasium", "latitude": "43.08455", "longitude": "-77.67388"},
     {"id": 2, "building": "Wallace Library", "latitude": "43.08392", "longitude": "-77.67637"},
     {"id": 3, "building": "Munsell Color Science Laboratory", "latitude": "43.08247", "longitude": "-77.67834"},
-    {"id": 4, "building": "Sustainability Institute Hall", "latitude": "43.08524", "longitude": "-77.68129"},
-    {"id": 5, "building": "Orange Hall", "latitude": "43.08358", "longitude": "-77.67875"},
+    {"id": 4, "building": "Sustainability Institute Hall", "latitude": "43.08533", "longitude": "-77.68129"},
+    {"id": 5, "building": "Orange Hall", "latitude": "43.08363", "longitude": "-77.67882"},
     {"id": 6, "building": "Bausch and Lomb Center", "latitude": "43.08600", "longitude": "-77.67537"},
     {"id": 7, "building": "Campus Center", "latitude": "43.08400", "longitude": "-77.67388"},
-    {"id": 8, "building": "Hale-Andrews Student Life Center", "latitude": "43.08450", "longitude": "-77.67192"},
+    {"id": 8, "building": "Hale-Andrews Student Life Center", "latitude": "43.08450", "longitude": "-77.67196"},
     {"id": 9, "building": "James E. Gleason Hall", "latitude": "43.08432", "longitude": "-77.67811"},
     {"id": 10, "building": "Center for Bioscience Education and Technology", "latitude": "43.08554", "longitude": "-77.67857"},
     {"id": 11, "building": "Gordon Field House", "latitude": "43.08506", "longitude": "-77.67175"},
@@ -103,7 +107,7 @@
     {"id": 18, "building": "Grace Watson Hall", "latitude": "43.08371", "longitude": "-77.66921"},
     {"id": 19, "building": "Engineering Technology Hall", "latitude": "43.08502", "longitude": "-77.68035"},
     {"id": 20, "building": "Louise Slaughter Hall", "latitude": "43.08490", "longitude": "-77.68226"},
-    {"id": 21, "building": "Global Village Plaza", "latitude": "43.08291", "longitude": "-77.68078"},
+    {"id": 21, "building": "Global Village Plaza", "latitude": "43.08283", "longitude": "-77.68118"},
     {"id": 22, "building": "Crossroads", "latitude": "43.08261", "longitude": "-77.68009"},
     {"id": 23, "building": "Chester F. Carlson Center for Imaging Science", "latitude": "43.08585", "longitude": "-77.67768"}
 ],
@@ -118,7 +122,8 @@
       this.map = new mapboxgl.Map({
         container: 'map',
         center: [-77.67515, 43.08448],
-        zoom: 14
+        zoom: 14,
+        attributionControl: false
       });
     }
 }
@@ -135,7 +140,6 @@
   .sidebar-right {
     width: 350px;
     background-color: #98C1D9;
-    padding: 30px;
     border-radius: 20px;
     overflow: auto;
     border: 5px solid #3D5A80; /* Add border style */
@@ -159,18 +163,33 @@
   .content {
     flex: 1;
     padding: 20px;
+    text-align: center;
+    color: #293241;
   }
   
   .content-inner {
     background-color: #fff;
-    padding: 0;
-    border:solid;
+    padding: 0px;
+    width: 80%;
+    height: 60vh;
+    margin: auto;
+    border: 5px solid #3D5A80;
+    margin-bottom: 40px;
   }
   #map {
-  position: relative;
-  margin: auto;
   width: 100%;
-  height: 60vh;
-}
+  height: 100%;
+  } 
+  .fun-fact h2 {
+    margin-bottom: 10px;
+  }
+  .fun-fact h3 {
+    margin-top: 0px;
+  }
+  .fun-fact {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
   </style>
   
