@@ -73,6 +73,11 @@ input {
     border-radius: 8px;
 }
 
+.create-button:hover {
+    background-color: #3D5A80;
+    transition: background-color 1s;
+}
+
 #app {
   font-family: Mukta;
   margin-top: -10px;

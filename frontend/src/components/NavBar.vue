@@ -79,6 +79,10 @@ a:hover {
 
 }
 
+.login-button:hover {
+  font-weight: bold;
+}
+
 .tiger-pledge {
   padding: 8px 30px; /* Adjust padding as needed */
   margin-right: auto; /* Pushes the Tiger Pledge link to the right */
