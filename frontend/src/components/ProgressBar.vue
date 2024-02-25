@@ -1,11 +1,10 @@
 <template>
   <div class="progress-container">
-    <h2>Progress</h2>
+    <h3>Progress</h3>
     <div class="progress-bar" :style="{ width: percent + '%' }"></div>
     <div class="controls">
       <button @click="decrement">-</button>
       <button @click="increment">+</button>
-      <p>{{ percent }}%</p>
     </div>
   </div>
 </template>
@@ -33,9 +32,10 @@ export default {
       if (this.current_amount === this.goal_amount) {
         this.goal_amount *= 2;
         this.start_amount = this.current_amount;
+        this.percent = 0;
+      } else {
+        this.percent = this.calcPercent();
       }
-
-      this.percent = this.calcPercent();
 
       this.changeGoal();
     },

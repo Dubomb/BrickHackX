@@ -39,7 +39,7 @@ export default {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 120px;
+    height: 100px;
     z-index: 999;
 }
 
@@ -61,7 +61,7 @@ input {
     box-sizing: border-box;
     background-color: gainsboro;
     border: 2px solid gray;
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
 }
 </style>

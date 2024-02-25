@@ -15,14 +15,17 @@
       <div class="box-container" v-if="showBox">
         <div class="box">
       <div v-if="selectedBox === 'water'">
-        Water sustainability tracker
+        <h1>Water Sustainability Tracker 💧</h1>
       </div>
       <div v-else-if="selectedBox === 'food'">
-        Food sustainability tracker
+        <h1>Food Sustainability Tracker 🍴</h1>
       </div>
       <div v-else-if="selectedBox === 'recycle'">
-        Recycling sustainability tracker
+        <h1>Recycling Sustainability Tracker ♻️</h1>
       </div>
+
+      <hr>
+      <br>
 
       <div class="goal-display-container">
         <div v-for="goal in filteredGoals" :key="goal.id">
@@ -141,11 +144,17 @@ export default {
 .TigerPledge {
     text-align: center;
     padding: 20px;
+    margin-bottom: 150px;
 }
 .TigerPledge p {
   font-size: 20px;
   width: 50%;
   margin: auto;
+}
+
+.goal-display-container {
+  overflow: auto;
+  height: 600px;
 }
 
 .button-container {
