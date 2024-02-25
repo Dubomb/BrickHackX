@@ -31,13 +31,18 @@
         BuildingNameCard
     },
     methods: {
-        handleBuildingClicked(buildingName) {
+        handleBuildingClicked(location) {
             // Do something with the emitted data (buildingName)
     
             this.matchLocations = []
             this.locations.forEach(loc => {
-                if (loc.building == buildingName) {
+                if (loc.building == location.building) {
                     this.matchLocations.push(loc);
+                    this.map.setCenter([location.longitude, location.latitude]);
+                    this.map.setZoom(18);
+                    new mapboxgl.Marker()
+                      .setLngLat([location.longitude, location.latitude])
+                      .addTo(this.map);
                 }
             });
         }
@@ -51,13 +56,13 @@
   {id: "3", descShort: "Near elevator on first floor at north end of building", building: "Student Life Center", abbreviation: "SLA"},
   {id: "4", descShort: "Near restrooms on A-level at north end of building", building: "Student Life Center", abbreviation: "SLA"},
   {id: "5", descShort: "Between restrooms on second floor above Slaughter Hall main entrance", building: "Student Life Center", abbreviation: "SLA"},
-  {id: "6", descShort: "In a hallway on eastern end of building", building: "Ornamental Horticulture Building", abbreviation: "ORN"},
+  {id: "6", descShort: "In a hallway on eastern end of building", building: "Orange Hall", abbreviation: "ORN"},
   {id: "7", descShort: "Near restrooms on first floor near east entrance", building: "Golisano Hall", abbreviation: "GLE"},
   {id: "8", descShort: "Near elevator on first floor", building: "Building 6", abbreviation: "LOW"},
-  {id: "9", descShort: "In color science lab hallway leading towards Ross building", building: "James E. Booth Hall", abbreviation: "COL"},
+  {id: "9", descShort: "In color science lab hallway leading towards Ross building", building: "Munsell Color Science Laboratory", abbreviation: "COL"},
   {id: "10", descShort: "Near restrooms on first floor", building: "Institute Hall", abbreviation: "HLC"},
   {id: "11", descShort: "Near first floor restrooms", building: "Engineering Technology Services", abbreviation: "ENT"},
-  {id: "12", descShort: "Near 2nd floor break room", building: "Susanne G. Whittaker Library", abbreviation: "SUS"},
+  {id: "12", descShort: "Near 2nd floor break room", building: "Sustainability Institute Hall", abbreviation: "SUS"},
   {id: "13", descShort: "Wiedman fitness center main entrance", building: "Gordon Field House", abbreviation: "GOR"},
   {id: "14", descShort: "Next to women's accessible restroom", building: "Gordon Field House", abbreviation: "GOR"},
   {id: "15", descShort: "Near entrance to honors program", building: "Grace Watson Hall", abbreviation: "GVP"},
@@ -79,27 +84,28 @@
   {id: "31", descShort: "Near restrooms on first floor", building: "University Services Center", abbreviation: "USC"}
 ],
         locationSet: [
-    {"id": 1, "building": "Clark Gymnasium"},
-    {"id": 2, "building": "Wallace Library"},
-    {"id": 3, "building": "James E. Booth Hall"},
-    {"id": 4, "building": "Susanne G. Whittaker Library"},
-    {"id": 5, "building": "Ornamental Horticulture Building"},
-    {"id": 6, "building": "Building 9"},
-    {"id": 7, "building": "Campus Center"},
-    {"id": 8, "building": "Hale-Andrews Student Life Center"},
-    {"id": 9, "building": "Golisano Hall"},
-    {"id": 10, "building": "College of Business"},
-    {"id": 11, "building": "Gordon Field House"},
-    {"id": 12, "building": "Building 6"},
-    {"id": 13, "building": "August Center"},
-    {"id": 14, "building": "Eastman Hall"},
-    {"id": 15, "building": "University Services Center"},
-    {"id": 16, "building": "Frank Ritter Ice Arena"},
-    {"id": 17, "building": "Institute Hall"},
-    {"id": 18, "building": "Grace Watson Hall"},
-    {"id": 19, "building": "Engineering Technology Services"},
-    {"id": 20, "building": "Student Life Center"}
-]
+    {"id": 1, "building": "Clark Gymnasium", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 2, "building": "Wallace Library", "latitude": "43.08384", "longitude": "-77.67637"},
+    {"id": 3, "building": "Munsell Color Science Laboratory", "latitude": "43.08497", "longitude": "-77.67708"},
+    {"id": 4, "building": "Sustainability Institute Hall", "latitude": "43.08519", "longitude": "-77.68135"},
+    {"id": 5, "building": "Orange Hall", "latitude": "", "longitude": "-77.67388"},
+    {"id": 6, "building": "Building 9", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 7, "building": "Campus Center", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 8, "building": "Hale-Andrews Student Life Center", "latitude": "", "longitude": "-77.67388"},
+    {"id": 9, "building": "Golisano Hall", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 10, "building": "College of Business", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 11, "building": "Gordon Field House", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 12, "building": "Building 6", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 13, "building": "August Center", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 14, "building": "Eastman Hall", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 15, "building": "University Services Center", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 16, "building": "Frank Ritter Ice Arena", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 17, "building": "Institute Hall", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 18, "building": "Grace Watson Hall", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 19, "building": "Engineering Technology Services", "latitude": "43.08455", "longitude": "-77.67388"},
+    {"id": 20, "building": "Student Life Center", "latitude": "43.08455", "longitude": "-77.67388"}
+],
+  map: null
 
 
     };
@@ -107,10 +113,10 @@
     },
     mounted() {
       mapboxgl.accessToken = 'pk.eyJ1IjoiZWp0NzUwOCIsImEiOiJjbHQwcHoyOWoxM2RuMmlvNnZvanhnbXF5In0.F4jjYcRbTHTNPerkaPnNhQ';
-      new mapboxgl.Map({
+      this.map = new mapboxgl.Map({
         container: 'map',
-        center: [-74.5, 40],
-        zoom: 9
+        center: [-77.67515, 43.08448],
+        zoom: 14
       });
     }
 }
