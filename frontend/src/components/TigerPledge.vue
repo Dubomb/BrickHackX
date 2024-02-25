@@ -25,6 +25,7 @@
       </div>
 
       <hr>
+      <br>
 
       <div class="goal-display-container">
         <div v-for="goal in filteredGoals" :key="goal.id">
