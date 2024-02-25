@@ -32,6 +32,10 @@
     justify-content: space-between;
     align-items: center;
     color: #3D5A80;
+    transition: box-shadow .5s;
+  }
+  .card:hover {
+    box-shadow: 0px 8px 10px rgba(61, 90, 128, 1);
   }
   
   h2 {

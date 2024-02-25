@@ -1,11 +1,12 @@
 <template>
   <div class="progress-container">
-    <h2>Progress</h2>
-    <div class="progress-bar" :style="{ width: percent + '%' }"></div>
+    <h3>Progress</h3>
+    <div class="progress-background">
+      <div class="progress-bar" :style="{ width: percent + '%' }"></div>
+    </div>
     <div class="controls">
-      <button @click="decrement">-</button>
-      <button @click="increment">+</button>
-      <p>{{ percent }}%</p>
+      <button @click="decrement"><strong>-</strong></button>
+      <button @click="increment"><strong>+</strong></button>
     </div>
   </div>
 </template>
@@ -33,9 +34,10 @@ export default {
       if (this.current_amount === this.goal_amount) {
         this.goal_amount *= 2;
         this.start_amount = this.current_amount;
+        this.percent = 0;
+      } else {
+        this.percent = this.calcPercent();
       }
-
-      this.percent = this.calcPercent();
 
       this.changeGoal();
     },
@@ -64,6 +66,10 @@ export default {
   width: 100%;
 }
 
+.progress-background {
+  background-color: rgb(227, 224, 224);
+}
+
 .progress-bar {
   height: 20px;
   background-color: #42b983; 
@@ -74,6 +80,17 @@ export default {
 }
 
 button {
-  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(253, 250, 250);
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0px 10px;
+}
+
+button:hover {
+  background-color: rgb(222, 220, 220);
+  transition: background-color 0.3s;
 }
 </style>

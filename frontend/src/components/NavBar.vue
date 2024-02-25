@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <h1><a href="/">EcoRIT</a></h1>
+    <a href="/"><img src="../assets/logo.png" alt="Logo" class="logo"></a>
     <a class="tiger-pledge" @click="handlePledgeClick">{{ items[0].text }}</a>
     <ul>
       <!-- You can add more navigation items here if needed -->
@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       items: [
-        { text: 'Tiger Pledge 🐾', url: '/pledge' }
+        { text: 'Tiger Pledge', url: '/pledge' }
       ]
     };
   },
@@ -40,11 +40,14 @@ nav {
   border-bottom: #385A80 solid 2px;
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   width: 100%; 
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0px 20px;
+  height: 140px;
 
 }
 
+.tiger-pledge {
+  font: 100% system-ui;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -58,6 +61,11 @@ li {
 a {
   color: #385A80;
   text-decoration: none;
+  padding: 0px 0px;
+  font-size: 25px;
+}
+a:hover {
+  font-weight: bold;
 }
 
 .login-button {
@@ -67,13 +75,24 @@ a {
   cursor: pointer;
   border: none;
   padding: 30px;
+  font-family: "Mukta";
 
 }
 
+.login-button:hover {
+  font-weight: bold;
+}
+
 .tiger-pledge {
-  padding: 15px 30px; /* Adjust padding as needed */
+  padding: 8px 30px; /* Adjust padding as needed */
   margin-right: auto; /* Pushes the Tiger Pledge link to the right */
   cursor: pointer;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  padding: 0px 0px;
 }
 </style>
 
