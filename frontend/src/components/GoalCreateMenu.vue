@@ -35,7 +35,12 @@ export default {
 <style scoped>
 .form-container {
     background-color: #385A80;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     padding: 20px;
+    z-index: 999;
 }
 
 label {
