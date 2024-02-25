@@ -7,9 +7,13 @@
         </div>
       </div>
       <div class="content">
-        <h2>Map View</h2> 
+        <h2>Find a Water Fountain!</h2> 
         <div class="content-inner">
           <div id="map" class="map"></div>
+        </div>
+        <div class="fun-fact">
+          <h2>Did you know?</h2>
+          <h3>Reusable water bottles can save hundreds of plastic water bottles every year!</h3>
         </div>
       </div>
       <div class="sidebar-right">
@@ -136,7 +140,6 @@
   .sidebar-right {
     width: 350px;
     background-color: #98C1D9;
-    padding: 30px;
     border-radius: 20px;
     overflow: auto;
     border: 5px solid #3D5A80; /* Add border style */
@@ -160,6 +163,8 @@
   .content {
     flex: 1;
     padding: 20px;
+    text-align: center;
+    color: #293241;
   }
   
   .content-inner {
@@ -169,10 +174,22 @@
     height: 60vh;
     margin: auto;
     border: 5px solid #3D5A80;
+    margin-bottom: 40px;
   }
   #map {
   width: 100%;
   height: 100%;
   } 
+  .fun-fact h2 {
+    margin-bottom: 10px;
+  }
+  .fun-fact h3 {
+    margin-top: 0px;
+  }
+  .fun-fact {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
   </style>
   
