@@ -2,7 +2,6 @@
     <h2>{{ goal.title }}</h2>
     <p>{{ goal.description }}</p>
     <p>{{ goal.current_amount }} out of {{ goal.goal_amount }}</p>
-    <p>{{ goal.category }}</p>
     <ProgressBar @onGoalChange="changeGoal"
       :start="goal.start_amount" 
       :current="goal.current_amount" 
