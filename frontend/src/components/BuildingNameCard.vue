@@ -31,6 +31,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #3D5A80;
   }
   
   h2 {

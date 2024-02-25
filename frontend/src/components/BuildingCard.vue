@@ -24,6 +24,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
     margin-bottom: 20px;
+    color: #3D5A80;
   }
   
   h2 {

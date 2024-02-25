@@ -1,17 +1,19 @@
 <template>
     <div class="container">
       <div class="sidebar-left">
+        <h2 class="sidebarTitle" >Location List</h2>
         <div class="location-cards">
             <BuildingNameCard v-for="(location, index) in locationSet" :key="index" :location="location" @building-clicked="handleBuildingClicked"/>
         </div>
       </div>
       <div class="content">
-        <p1>Map View</p1>
+        <h2>Map View</h2> 
         <div class="content-inner">
           <div id="map" class="map"></div>
         </div>
       </div>
       <div class="sidebar-right">
+        <h2 class="sidebarTitle">Matched Locations</h2>
         <div class="location-cards">
             <BuildingCard v-for="(location, index) in matchLocations" :key="index" :location="location"/>
         </div>
@@ -125,12 +127,28 @@
   
   .sidebar-left,
   .sidebar-right {
-    width: 300px;
+    width: 350px;
     background-color: #98C1D9;
     padding: 30px;
     border-radius: 20px;
     overflow: auto;
+    border: 5px solid #3D5A80; /* Add border style */
+    padding: 20px; /* Add padding for spacing */
   }
+
+  .sidebar-left::-webkit-scrollbar {
+  width: 0; /* Make the scrollbar width 0 */
+}
+
+.sidebar-right::-webkit-scrollbar {
+  width: 0; /* Make the scrollbar width 0 */
+}
+ 
+.sidebarTitle{
+    font-size: 28px;
+    color: #293241;
+    border-bottom: 1px solid #293241; 
+}
   
   .content {
     flex: 1;
