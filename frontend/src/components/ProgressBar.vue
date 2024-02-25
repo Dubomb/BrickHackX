@@ -20,13 +20,13 @@ export default {
     methods: {
         increment() {
             if (this.progress < 100) {  // need to replace with actual goal instead of 100
-                this.progress += 10; 
+                this.progress += 1; 
             }
         },
 
         decrement() {
             if (this.progress > 0) {
-                this.progress -= 10;
+                this.progress -= 1;
             }
         }
     }
