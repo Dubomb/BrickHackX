@@ -3,21 +3,24 @@
     <p>{{ goal.description }}</p>
     <p>{{ goal.current_amount }} out of {{ goal.goal_amount }}</p>
     <p>{{ goal.category }}</p>
-    <ProgressBar :progress="goal.progress"></ProgressBar>
-</template>
-
-
-<script>
-import ProgressBar from './ProgressBar.vue';
-export default {
+    <ProgressBar 
+      :start="goal.start_amount" 
+      :current="goal.current_amount" 
+      :end-goal="goal.goal_amount"
+    ></ProgressBar>
+  </template>
+  
+  <script>
+  import ProgressBar from './ProgressBar.vue';
+  
+  export default {
     name: "GoalCard",
-
     components: {
-        ProgressBar
+      ProgressBar
     },
     props: ['goal']
-}
-</script>
+  }
+  </script>
 
 <style scoped>
 
