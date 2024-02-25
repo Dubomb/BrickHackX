@@ -45,6 +45,9 @@ nav {
 
 }
 
+.tiger-pledge {
+  font: 100% system-ui;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -59,10 +62,10 @@ a {
   color: #385A80;
   text-decoration: none;
   padding: 0px 0px;
+  font-size: 25px;
 }
 a:hover {
-  color: #98C1D9;
-  transition: color .5s;
+  font-weight: bold;
 }
 
 .login-button {
@@ -72,6 +75,7 @@ a:hover {
   cursor: pointer;
   border: none;
   padding: 30px;
+  font-family: "Mukta";
 
 }
 
