@@ -82,7 +82,7 @@
 ],
         locationSet: [
     {"id": 1, "building": "Clark Gymnasium", "latitude": "43.08455", "longitude": "-77.67388"},
-    {"id": 2, "building": "Wallace Library", "latitude": "43.08384", "longitude": "-77.67637"},
+    {"id": 2, "building": "Wallace Library", "latitude": "43.08392", "longitude": "-77.67637"},
     {"id": 3, "building": "Munsell Color Science Laboratory", "latitude": "43.08247", "longitude": "-77.67834"},
     {"id": 4, "building": "Sustainability Institute Hall", "latitude": "43.08524", "longitude": "-77.68129"},
     {"id": 5, "building": "Orange Hall", "latitude": "43.08358", "longitude": "-77.67875"},
@@ -145,12 +145,13 @@
   
   .content-inner {
     background-color: #fff;
-    padding: 20px;
+    padding: 0;
+    border:solid;
   }
   #map {
   position: relative;
   margin: auto;
-  width: 80%;
+  width: 100%;
   height: 60vh;
 }
   </style>
